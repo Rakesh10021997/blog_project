@@ -1,0 +1,42 @@
+.content{
+  width:50%;
+  float: left;
+  padding: 0 0 0 30px;
+  background-color: red;
+}
+.sidebar{
+  width: 40%;
+  float: right;
+  padding:10px;
+  background: blue;
+  height: 100%;
+}
+h1
+{
+  text-align: center;
+  border-bottom: 10px;
+  padding-bottom: 10px;
+}
+body{
+  color: white;
+  background-color: red;
+}
+#date{
+  color: yellow;
+  font-size:12px;
+  font-style: italic;
+}
+a{
+  color:#aabbdf;
+}
+input[type='text']{
+  background: blue;
+  color:white;
+}
+
+
+#pcount{
+  font-size: :440px;
+  color:yellow;
+  font-weight: bold;
+}

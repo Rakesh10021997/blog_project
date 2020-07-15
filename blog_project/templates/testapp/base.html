@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{%load blog_tags%}
+{%load staticfiles%}
+<html lang="en" dir="ltr">
+
+  <head>
+    <link rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+     crossorigin="anonymous">
+   <link rel="stylesheet" href="{%static "css/blog.css" %}">
+    <meta charset="utf-8">
+    <title>{% block title_block %}{% endblock %}</title>
+  </head>
+  <body>
+
+<div class="content">
+  {% block content %}
+  {% endblock %}
+</div>
+<div class="right sidebar">
+  <h2>Rakesh's Blog</h2>
+  <h3>the total post number of published upto day <span id='pcount'>{% mytag %}</span></h3>
+
+  <p>The total number of published posts upto today:<span id='pcount'>{%mytag%}</span></p>
+  <h3>Latest post:</h3>{%show_latest_posts 4%}
+  <h3>Most comments posts:</h3>
+  {% get_most_commented_posts as most_commented_posts %}
+  <ul>
+    {%for post in most_commented_posts %}
+    <li> <a href="{{post.get_absolute_url}}">{{post.title}}</a></li>
+    {% endfor %}
+  </ul>
+
+</div>
+  </body>
+</html>
